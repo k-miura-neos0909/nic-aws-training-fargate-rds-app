@@ -1,0 +1,1 @@
+# nic-aws-training-fargate-rds-app
