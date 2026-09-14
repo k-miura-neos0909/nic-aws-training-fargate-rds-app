@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>NIC AWS Message App</title>
+</head>
+<body>
+
+    <h1>NIC AWS Message App</h1>
+
+    <form action="/messages" method="post">
+        <label>
+            メッセージ：
+            <input
+                type="text"
+                name="message"
+                maxlength="255"
+                required
+            >
+        </label>
+
+        <button type="submit">登録</button>
+    </form>
+
+    <h2>登録済みメッセージ</h2>
+
+    <ul>
+        {% for id, message, created_at in messages %}
+        <li>
+            {{ id }}:
+            {{ message }}
+            ({{ created_at }})
+        </li>
+        {% else %}
+        <li>まだメッセージはありません。</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
